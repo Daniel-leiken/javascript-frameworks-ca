@@ -14,7 +14,7 @@ export async function ProductList() {
     if (!products || products.length === 0) {
       return (
         <div className="py-12 text-center">
-          <p className="text-gray-600">No products found.</p>
+          <p className="text-gray-200">No products found.</p>
         </div>
       );
     }

@@ -59,7 +59,7 @@ export function CartItem({ item }: CartItemProps) {
             >
               {product.title}
             </Link>
-            <p className="mt-1 text-sm text-gray-600">
+            <p className="mt-1 text-sm text-gray-700">
               {formatCurrency(product.discountedPrice)} each
             </p>
           </div>
@@ -73,7 +73,7 @@ export function CartItem({ item }: CartItemProps) {
           <div className="flex items-center space-x-2">
             <button
               onClick={() => handleQuantityChange(quantity - 1)}
-              className="flex h-8 w-8 items-center justify-center rounded-md border border-gray-300 text-gray-600 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
+              className="flex h-8 w-8 items-center justify-center rounded-md border border-gray-300 text-gray-200 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
               disabled={quantity <= 1}
               aria-label="Decrease quantity"
             >
@@ -84,7 +84,7 @@ export function CartItem({ item }: CartItemProps) {
             </span>
             <button
               onClick={() => handleQuantityChange(quantity + 1)}
-              className="flex h-8 w-8 items-center justify-center rounded-md border border-gray-300 text-gray-600 hover:bg-gray-50"
+              className="flex h-8 w-8 items-center justify-center rounded-md border border-gray-300 text-gray-200 hover:bg-gray-50"
               aria-label="Increase quantity"
             >
               +

@@ -23,10 +23,10 @@ export function EmptyCart() {
           />
         </svg>
       </div>
-      <h2 className="mt-6 text-2xl font-bold text-gray-900">
+      <h2 className="mt-6 text-2xl font-bold text-gray-200">
         Your cart is empty
       </h2>
-      <p className="mt-2 text-gray-600">
+      <p className="mt-2 text-gray-200">
         Start shopping to add items to your cart
       </p>
       <Link

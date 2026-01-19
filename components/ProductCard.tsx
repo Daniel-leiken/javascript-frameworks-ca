@@ -65,7 +65,7 @@ export function ProductCard({ product }: ProductCardProps) {
                 </svg>
               ))}
             </div>
-            <span className="ml-2 text-xs text-gray-500">
+            <span className="ml-2 text-xs text-gray-600">
               {product.rating.toFixed(1)}
             </span>
           </div>

@@ -45,14 +45,14 @@ export function CheckoutSuccess() {
       <h1 className="mt-6 text-3xl font-bold text-gray-900 sm:text-4xl">
         Order Placed Successfully!
       </h1>
-      <p className="mt-4 text-lg text-gray-600">
+      <p className="mt-4 text-lg text-gray-200">
         Thank you for your purchase. Your order has been received and is being processed.
       </p>
 
       {/* Order Details */}
       <div className="mt-8 rounded-lg bg-gray-50 p-6">
-        <h2 className="text-lg font-semibold text-gray-900">What's Next?</h2>
-        <div className="mt-4 space-y-3 text-left text-sm text-gray-600">
+        <h2 className="text-lg font-semibold text-gray-200">What's Next?</h2>
+        <div className="mt-4 space-y-3 text-left text-sm text-gray-200">
           <div className="flex items-start">
             <svg
               className="mr-2 mt-0.5 h-5 w-5 flex-shrink-0 text-green-600"

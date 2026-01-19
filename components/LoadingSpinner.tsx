@@ -28,7 +28,7 @@ export function LoadingPage() {
     <div className="flex min-h-[400px] items-center justify-center">
       <div className="text-center">
         <LoadingSpinner size="lg" />
-        <p className="mt-4 text-gray-600">Loading...</p>
+        <p className="mt-4 text-gray-200">Loading...</p>
       </div>
     </div>
   );

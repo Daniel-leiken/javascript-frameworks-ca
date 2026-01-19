@@ -7,21 +7,11 @@ import toast from 'react-hot-toast';
 
 export const showToast = {
   success: (message: string) => {
-    toast.success(message, {
-      style: {
-        background: '#10b981',
-        color: '#fff',
-      },
-    });
+    toast.success(message);
   },
 
   error: (message: string) => {
-    toast.error(message, {
-      style: {
-        background: '#ef4444',
-        color: '#fff',
-      },
-    });
+    toast.error(message);
   },
 
   loading: (message: string) => {

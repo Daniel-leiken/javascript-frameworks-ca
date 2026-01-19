@@ -21,7 +21,7 @@ export function CartSummary() {
       <div className="mt-6 space-y-4">
         {/* Items Count */}
         <div className="flex justify-between text-sm">
-          <span className="text-gray-600">
+          <span className="text-gray-700">
             Items ({totalItems})
           </span>
           <span className="font-medium text-gray-900">

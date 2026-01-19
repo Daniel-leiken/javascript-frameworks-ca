@@ -64,7 +64,7 @@ export function ProductsGrid({ initialProducts }: ProductsGridProps) {
 
       {/* Results Count */}
       <div className="mb-6 flex items-center justify-between">
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-gray-200">
           Showing <span className="font-semibold">{sortedProducts.length}</span> 
           {searchQuery && ' matching'} products
         </p>
@@ -87,7 +87,7 @@ export function ProductsGrid({ initialProducts }: ProductsGridProps) {
         </div>
       ) : (
         <div className="py-12 text-center">
-          <p className="text-gray-600">
+          <p className="text-gray-200">
             No products found matching "{searchQuery}". Try a different search term.
           </p>
         </div>

@@ -13,10 +13,10 @@ export default function Home() {
     <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
       {/* Header Section */}
       <div className="mb-8 text-center">
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+        <h1 className="text-4xl font-bold tracking-tight text-gray-200 sm:text-5xl">
           Discover Amazing Products
         </h1>
-        <p className="mt-4 text-lg text-gray-600">
+        <p className="mt-4 text-lg text-gray-200">
           Browse our collection of quality products at great prices
         </p>
       </div>
