@@ -1,10 +1,10 @@
 /**
  * Product List Component
- * Fetches and displays all products in a responsive grid
+ * Fetches and displays all products with search and sort
  */
 
 import { fetchProducts } from '@/lib/api';
-import { ProductCard } from './ProductCard';
+import { ProductsGrid } from './ProductsGrid';
 import { ErrorMessage } from './ErrorMessage';
 
 export async function ProductList() {
@@ -19,23 +19,7 @@ export async function ProductList() {
       );
     }
 
-    return (
-      <div>
-        {/* Product Count */}
-        <div className="mb-6 flex items-center justify-between">
-          <p className="text-sm text-gray-600">
-            Showing <span className="font-semibold">{products.length}</span> products
-          </p>
-        </div>
-
-        {/* Product Grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </div>
-    );
+    return <ProductsGrid initialProducts={products} />;
   } catch (error) {
     return (
       <ErrorMessage
