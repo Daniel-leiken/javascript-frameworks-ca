@@ -13,12 +13,12 @@ export function Header() {
   const totalItems = useCartStore((state) => state.getTotalItems());
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white shadow-sm">
+    <header className="sticky top-0 z-50 w-full border-b border-blue-700 bg-blue-600 shadow-lg">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold text-blue-600">
+            <div className="text-2xl font-bold text-white">
               ShopHub
             </div>
           </Link>
@@ -27,13 +27,13 @@ export function Header() {
           <nav className="hidden md:flex items-center space-x-8">
             <Link
               href="/"
-              className="text-sm font-medium text-gray-700 transition-colors hover:text-blue-600"
+              className="text-sm font-medium text-white transition-colors hover:text-blue-100"
             >
               Products
             </Link>
             <Link
               href="/contact"
-              className="text-sm font-medium text-gray-700 transition-colors hover:text-blue-600"
+              className="text-sm font-medium text-white transition-colors hover:text-blue-100"
             >
               Contact
             </Link>
@@ -42,7 +42,7 @@ export function Header() {
           {/* Cart Button */}
           <Link
             href="/cart"
-            className="relative flex items-center space-x-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
+            className="relative flex items-center space-x-2 rounded-lg bg-white px-4 py-2 text-sm font-medium text-blue-600 transition-colors hover:bg-blue-50"
           >
             <ShoppingCart className="h-5 w-5" />
             <span className="hidden sm:inline">Cart</span>
@@ -58,13 +58,13 @@ export function Header() {
         <nav className="flex md:hidden items-center space-x-6 pb-3">
           <Link
             href="/"
-            className="text-sm font-medium text-gray-700 transition-colors hover:text-blue-600"
+            className="text-sm font-medium text-white transition-colors hover:text-blue-100"
           >
             Products
           </Link>
           <Link
             href="/contact"
-            className="text-sm font-medium text-gray-700 transition-colors hover:text-blue-600"
+            className="text-sm font-medium text-white transition-colors hover:text-blue-100"
           >
             Contact
           </Link>
