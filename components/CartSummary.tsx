@@ -44,7 +44,7 @@ export function CartSummary() {
       {/* Checkout Button */}
       <Link
         href="/checkout/success"
-        className="mt-6 block w-full rounded-lg bg-blue-600 px-6 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        className="mt-6 block w-full rounded-lg bg-emerald-600 px-6 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
       >
         Proceed to Checkout
       </Link>

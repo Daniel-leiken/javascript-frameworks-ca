@@ -31,19 +31,19 @@ export function ProductDetail({ product }: ProductDetailProps) {
   return (
     <div className="mx-auto max-w-7xl">
       {/* Breadcrumb */}
-      <nav className="mb-8 flex items-center space-x-2 text-sm text-gray-200">
-        <Link href="/" className="hover:text-blue-600">
+      <nav className="mb-6 sm:mb-8 flex items-center space-x-2 text-xs sm:text-sm text-gray-200 overflow-x-auto">
+        <Link href="/" className="hover:text-emerald-600 whitespace-nowrap">
           Products
         </Link>
         <span>/</span>
-        <span className="text-gray-200">{product.title}</span>
+        <span className="text-gray-200 truncate">{product.title}</span>
       </nav>
 
-      <div className="grid gap-8 lg:grid-cols-2">
+      <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
         {/* Product Image */}
         <div className="relative aspect-square overflow-hidden rounded-lg bg-gray-100">
           {showDiscount && (
-            <div className="absolute right-4 top-4 z-10 rounded-full bg-red-500 px-4 py-2 text-sm font-bold text-white shadow-lg">
+            <div className="absolute right-2 top-2 sm:right-4 sm:top-4 z-10 rounded-full bg-red-500 px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm font-bold text-white shadow-lg">
               -{discountPercentage}% OFF
             </div>
           )}
@@ -59,18 +59,18 @@ export function ProductDetail({ product }: ProductDetailProps) {
 
         {/* Product Information */}
         <div className="flex flex-col">
-          <h1 className="text-3xl font-bold text-gray-200 lg:text-4xl">
+          <h1 className="text-2xl font-bold text-gray-200 sm:text-3xl lg:text-4xl">
             {product.title}
           </h1>
 
           {/* Rating */}
           {product.rating > 0 && (
-            <div className="mt-4 flex items-center">
+            <div className="mt-3 sm:mt-4 flex items-center">
               <div className="flex items-center text-yellow-400">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <svg
                     key={i}
-                    className={`h-5 w-5 ${
+                    className={`h-4 w-4 sm:h-5 sm:w-5 ${
                       i < Math.floor(product.rating)
                         ? 'fill-current'
                         : 'fill-gray-300'
@@ -81,11 +81,11 @@ export function ProductDetail({ product }: ProductDetailProps) {
                   </svg>
                 ))}
               </div>
-              <span className="ml-2 text-sm text-gray-200">
+              <span className="ml-2 text-xs sm:text-sm text-gray-200">
                 {product.rating.toFixed(1)} / 5.0
               </span>
               {product.reviews.length > 0 && (
-                <span className="ml-2 text-sm text-gray-200">
+                <span className="ml-2 text-xs sm:text-sm text-gray-200">
                   ({product.reviews.length} {product.reviews.length === 1 ? 'review' : 'reviews'})
                 </span>
               )}
@@ -93,45 +93,45 @@ export function ProductDetail({ product }: ProductDetailProps) {
           )}
 
           {/* Price */}
-          <div className="mt-6">
+          <div className="mt-4 sm:mt-6">
             {showDiscount ? (
-              <div className="flex items-baseline gap-3">
-                <span className="text-4xl font-bold text-gray-200">
+              <div className="flex items-baseline gap-2 sm:gap-3">
+                <span className="text-2xl font-bold text-gray-200 sm:text-3xl lg:text-4xl">
                   {formatCurrency(product.discountedPrice)}
                 </span>
-                <span className="text-xl text-gray-400 line-through">
+                <span className="text-lg sm:text-xl text-gray-400 line-through">
                   {formatCurrency(product.price)}
                 </span>
               </div>
             ) : (
-              <span className="text-4xl font-bold text-gray-200">
+              <span className="text-2xl font-bold text-gray-200 sm:text-3xl lg:text-4xl">
                 {formatCurrency(product.price)}
               </span>
             )}
             {showDiscount && (
-              <p className="mt-2 text-sm text-green-400">
+              <p className="mt-2 text-xs sm:text-sm text-green-400">
                 You save {formatCurrency(product.price - product.discountedPrice)}
               </p>
             )}
           </div>
 
           {/* Description */}
-          <div className="mt-6">
-            <h2 className="text-lg font-semibold text-gray-200">Description</h2>
-            <p className="mt-2 text-gray-200 leading-relaxed">
+          <div className="mt-4 sm:mt-6">
+            <h2 className="text-base sm:text-lg font-semibold text-gray-200">Description</h2>
+            <p className="mt-2 text-sm sm:text-base text-gray-200 leading-relaxed">
               {product.description}
             </p>
           </div>
 
           {/* Tags */}
           {product.tags.length > 0 && (
-            <div className="mt-6">
-              <h2 className="text-lg font-semibold text-gray-200">Tags</h2>
+            <div className="mt-4 sm:mt-6">
+              <h2 className="text-base sm:text-lg font-semibold text-gray-200">Tags</h2>
               <div className="mt-2 flex flex-wrap gap-2">
                 {product.tags.map((tag, index) => (
                   <span
                     key={index}
-                    className="rounded-full bg-gray-700 px-3 py-1 text-sm text-gray-200"
+                    className="rounded-full bg-gray-700 px-2 sm:px-3 py-1 text-xs sm:text-sm text-gray-200"
                   >
                     {tag}
                   </span>
@@ -143,7 +143,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
           {/* Add to Cart Button */}
           <button
             onClick={handleAddToCart}
-            className="mt-8 w-full rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="mt-6 sm:mt-8 w-full rounded-lg bg-emerald-600 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-white transition-colors hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
           >
             Add to Cart
           </button>
@@ -152,9 +152,9 @@ export function ProductDetail({ product }: ProductDetailProps) {
 
       {/* Reviews Section */}
       {product.reviews.length > 0 && (
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold text-gray-200">Customer Reviews</h2>
-          <div className="mt-6 space-y-6">
+        <div className="mt-10 sm:mt-12 lg:mt-16">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-200">Customer Reviews</h2>
+          <div className="mt-4 sm:mt-6 space-y-4 sm:space-y-6">
             {product.reviews.map((review) => (
               <div
                 key={review.id}

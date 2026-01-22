@@ -71,7 +71,7 @@ export function ProductsGrid({ initialProducts }: ProductsGridProps) {
         {searchQuery && (
           <button
             onClick={() => setSearchQuery('')}
-            className="text-sm text-blue-600 hover:text-blue-700"
+            className="text-sm text-emerald-600 hover:text-emerald-700"
           >
             Clear search
           </button>

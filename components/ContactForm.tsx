@@ -88,7 +88,7 @@ export function ContactForm() {
           onChange={handleChange}
           className={`mt-1 block w-full rounded-lg border ${
             errors.fullName ? 'border-red-500' : 'border-gray-300'
-          } px-4 py-3 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+          } px-4 py-3 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500`}
           placeholder="John Doe"
         />
         {errors.fullName && (
@@ -112,7 +112,7 @@ export function ContactForm() {
           onChange={handleChange}
           className={`mt-1 block w-full rounded-lg border ${
             errors.subject ? 'border-red-500' : 'border-gray-300'
-          } px-4 py-3 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+          } px-4 py-3 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500`}
           placeholder="How can we help?"
         />
         {errors.subject && (
@@ -136,7 +136,7 @@ export function ContactForm() {
           onChange={handleChange}
           className={`mt-1 block w-full rounded-lg border ${
             errors.email ? 'border-red-500' : 'border-gray-300'
-          } px-4 py-3 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+          } px-4 py-3 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500`}
           placeholder="john@example.com"
         />
         {errors.email && (
@@ -160,7 +160,7 @@ export function ContactForm() {
           rows={6}
           className={`mt-1 block w-full rounded-lg border ${
             errors.message ? 'border-red-500' : 'border-gray-300'
-          } px-4 py-3 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+          } px-4 py-3 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500`}
           placeholder="Tell us more about your inquiry..."
         />
         {errors.message && (
@@ -175,7 +175,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        className="w-full rounded-lg bg-emerald-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {isSubmitting ? 'Sending...' : 'Send Message'}
       </button>

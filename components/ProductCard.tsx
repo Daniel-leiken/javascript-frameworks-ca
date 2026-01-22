@@ -43,7 +43,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
       {/* Product Info */}
       <div className="flex flex-1 flex-col p-4">
-        <h3 className="text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-blue-600">
+        <h3 className="text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-emerald-600">
           {product.title}
         </h3>
 

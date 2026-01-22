@@ -108,7 +108,7 @@ export function CheckoutSuccess() {
       <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
         <Link
           href="/"
-          className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
+          className="inline-flex items-center justify-center rounded-lg bg-emerald-600 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-emerald-700"
         >
           Continue Shopping
         </Link>
@@ -123,7 +123,7 @@ export function CheckoutSuccess() {
       {/* Additional Info */}
       <p className="mt-8 text-sm text-gray-500">
         Need help? Contact our support team at{' '}
-        <Link href="/contact" className="text-blue-600 hover:text-blue-700">
+        <Link href="/contact" className="text-emerald-600 hover:text-emerald-700">
           support
         </Link>
       </p>

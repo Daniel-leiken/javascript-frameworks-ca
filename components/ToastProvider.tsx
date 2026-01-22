@@ -15,7 +15,7 @@ export function ToastProvider() {
         // Default options for all toasts
         duration: 3000,
         style: {
-          background: '#1e3a8a', // blue-900 - WCAG compliant
+          background: '#047857', // emerald-700 - WCAG compliant
           color: '#fff',
           padding: '16px',
           borderRadius: '8px',
@@ -26,12 +26,12 @@ export function ToastProvider() {
         success: {
           duration: 3000,
           style: {
-            background: '#15803d', // green-700 - WCAG compliant
+            background: '#059669', // emerald-600 - WCAG compliant
             color: '#fff',
           },
           iconTheme: {
             primary: '#fff',
-            secondary: '#15803d',
+            secondary: '#059669',
           },
         },
         // Error toast style
