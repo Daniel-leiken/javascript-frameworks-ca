@@ -42,7 +42,7 @@ export function CheckoutSuccess() {
       </div>
 
       {/* Success Message */}
-      <h1 className="mt-6 text-3xl font-bold text-gray-900 sm:text-4xl">
+      <h1 className="mt-6 text-3xl font-bold text-gray-100 sm:text-4xl">
         Order Placed Successfully!
       </h1>
       <p className="mt-4 text-lg text-gray-200">
@@ -50,9 +50,9 @@ export function CheckoutSuccess() {
       </p>
 
       {/* Order Details */}
-      <div className="mt-8 rounded-lg bg-gray-50 p-6">
-        <h2 className="text-lg font-semibold text-gray-200">What's Next?</h2>
-        <div className="mt-4 space-y-3 text-left text-sm text-gray-200">
+      <div className="mt-8 rounded-lg bg-white p-6">
+        <h2 className="text-lg font-semibold text-gray-900">What's Next?</h2>
+        <div className="mt-4 space-y-3 text-left text-sm text-gray-700">
           <div className="flex items-start">
             <svg
               className="mr-2 mt-0.5 h-5 w-5 flex-shrink-0 text-green-600"
@@ -121,9 +121,9 @@ export function CheckoutSuccess() {
       </div>
 
       {/* Additional Info */}
-      <p className="mt-8 text-sm text-gray-500">
+      <p className="mt-8 text-sm text-gray-300">
         Need help? Contact our support team at{' '}
-        <Link href="/contact" className="text-emerald-600 hover:text-emerald-700">
+        <Link href="/contact" className="text-emerald-400 hover:text-emerald-300">
           support
         </Link>
       </p>

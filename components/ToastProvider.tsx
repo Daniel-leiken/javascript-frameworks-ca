@@ -11,6 +11,9 @@ export function ToastProvider() {
   return (
     <Toaster
       position="top-right"
+      containerStyle={{
+        top: '4.75rem',
+      }}
       toastOptions={{
         // Default options for all toasts
         duration: 3000,
