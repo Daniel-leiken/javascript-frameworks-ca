@@ -95,6 +95,10 @@ This project can be deployed to:
 - **Netlify**
 - Any platform supporting Next.js
 
+## 🤖 AI Usage
+
+GitHub Copilot was used as an assistant during the development of this project, including generating example approaches, helping structure parts of the implementation, and supporting layout and UI consistency decisions.
+
 ## 👨‍💻 Author
 
 Daniel Strandheim
