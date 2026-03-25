@@ -17,7 +17,7 @@ export function LoadingSpinner({ size = 'md', className = '' }: LoadingSpinnerPr
   return (
     <div className={`flex items-center justify-center ${className}`}>
       <div
-        className={`${sizeClasses[size]} animate-spin rounded-full border-emerald-600 border-t-transparent`}
+        className={`${sizeClasses[size]} animate-spin rounded-full border-brand border-t-transparent`}
       />
     </div>
   );
@@ -28,7 +28,7 @@ export function LoadingPage() {
     <div className="flex min-h-[400px] items-center justify-center">
       <div className="text-center">
         <LoadingSpinner size="lg" />
-        <p className="mt-4 text-gray-200">Loading...</p>
+        <p className="mt-4 text-text-secondary">Loading...</p>
       </div>
     </div>
   );

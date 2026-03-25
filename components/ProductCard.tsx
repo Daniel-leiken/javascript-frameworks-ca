@@ -21,17 +21,17 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <Link
       href={`/products/${product.id}`}
-      className="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white transition-all hover:shadow-lg"
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-border-custom bg-white transition-all hover:shadow-[0_4px_20px_rgba(45,41,38,0.08)]"
     >
       {/* Discount Badge */}
       {showDiscount && (
-        <div className="absolute right-2 top-2 z-10 rounded-full bg-red-500 px-3 py-1 text-xs font-bold text-white shadow-lg">
+        <div className="absolute right-2 top-2 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold text-white shadow-lg">
           -{discountPercentage}%
         </div>
       )}
 
       {/* Product Image */}
-      <div className="relative aspect-square w-full overflow-hidden bg-gray-100">
+      <div className="relative aspect-square w-full overflow-hidden bg-surface">
         <Image
           src={product.image.url}
           alt={product.image.alt || product.title}
@@ -43,7 +43,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
       {/* Product Info */}
       <div className="flex flex-1 flex-col p-4">
-        <h3 className="text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-emerald-600">
+        <h3 className="text-sm font-medium text-foreground line-clamp-2 group-hover:text-brand-dark">
           {product.title}
         </h3>
 
@@ -65,7 +65,7 @@ export function ProductCard({ product }: ProductCardProps) {
                 </svg>
               ))}
             </div>
-            <span className="ml-2 text-xs text-gray-600">
+            <span className="ml-2 text-xs text-text-secondary">
               {product.rating.toFixed(1)}
             </span>
           </div>
@@ -75,15 +75,15 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="mt-auto pt-3">
           {showDiscount ? (
             <div className="flex items-center gap-2">
-              <span className="text-lg font-bold text-gray-900">
+              <span className="text-lg font-bold text-foreground">
                 {formatCurrency(product.discountedPrice)}
               </span>
-              <span className="text-sm text-gray-500 line-through">
+              <span className="text-sm text-text-secondary line-through">
                 {formatCurrency(product.price)}
               </span>
             </div>
           ) : (
-            <span className="text-lg font-bold text-gray-900">
+            <span className="text-lg font-bold text-foreground">
               {formatCurrency(product.price)}
             </span>
           )}

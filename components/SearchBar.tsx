@@ -36,10 +36,10 @@ export function SearchBar({ onSearch }: SearchBarProps) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search products..."
-          className="w-full rounded-lg border border-gray-300 py-3 pl-10 pr-10 text-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          className="w-full rounded-xl border border-border-custom py-3 pl-10 pr-10 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
         />
         <svg
-          className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400"
+          className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-text-secondary"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -54,7 +54,7 @@ export function SearchBar({ onSearch }: SearchBarProps) {
         {query && (
           <button
             onClick={handleClear}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-200"
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-text-secondary hover:text-foreground"
             aria-label="Clear search"
           >
             <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -15,14 +15,14 @@ interface SortDropdownProps {
 export function SortDropdown({ value, onChange }: SortDropdownProps) {
   return (
     <div className="flex items-center space-x-2">
-      <label htmlFor="sort" className="text-sm font-medium text-gray-200">
+      <label htmlFor="sort" className="text-sm font-medium text-text-secondary">
         Sort by:
       </label>
       <select
         id="sort"
         value={value}
         onChange={(e) => onChange(e.target.value as SortOption)}
-        className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+        className="rounded-xl border border-border-custom px-3 py-2 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
       >
         <option value="">Default</option>
         <option value="name-asc">Name (A-Z)</option>

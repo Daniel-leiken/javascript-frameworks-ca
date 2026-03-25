@@ -8,9 +8,9 @@ import Link from 'next/link';
 export function EmptyCart() {
   return (
     <div className="mt-16 text-center">
-      <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-gray-100">
+      <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-brand-light">
         <svg
-          className="h-12 w-12 text-gray-400"
+          className="h-12 w-12 text-brand"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -23,15 +23,15 @@ export function EmptyCart() {
           />
         </svg>
       </div>
-      <h2 className="mt-6 text-2xl font-bold text-gray-200">
+      <h2 className="mt-6 font-serif text-2xl font-bold text-foreground">
         Your cart is empty
       </h2>
-      <p className="mt-2 text-gray-200">
+      <p className="mt-2 text-text-secondary">
         Start shopping to add items to your cart
       </p>
       <Link
         href="/"
-        className="mt-8 inline-block rounded-lg bg-emerald-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-emerald-700"
+        className="mt-8 inline-block rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
       >
         Browse Products
       </Link>

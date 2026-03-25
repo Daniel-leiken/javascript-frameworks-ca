@@ -34,11 +34,11 @@ export function CartItem({ item }: CartItemProps) {
   const itemTotal = product.discountedPrice * quantity;
 
   return (
-    <div className="flex gap-4 rounded-lg border border-gray-200 bg-white p-4">
+    <div className="flex gap-4 rounded-2xl border border-border-custom bg-white p-4">
       {/* Product Image */}
       <Link
         href={`/products/${product.id}`}
-        className="relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-md bg-gray-100"
+        className="relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-xl bg-surface"
       >
         <Image
           src={product.image.url}
@@ -55,15 +55,15 @@ export function CartItem({ item }: CartItemProps) {
           <div className="flex-1">
             <Link
               href={`/products/${product.id}`}
-              className="text-sm font-medium text-gray-900 hover:text-emerald-600"
+              className="text-sm font-medium text-foreground hover:text-brand-dark"
             >
               {product.title}
             </Link>
-            <p className="mt-1 text-sm text-gray-700">
+            <p className="mt-1 text-sm text-text-secondary">
               {formatCurrency(product.discountedPrice)} each
             </p>
           </div>
-          <p className="text-sm font-semibold text-gray-900">
+          <p className="text-sm font-semibold text-foreground">
             {formatCurrency(itemTotal)}
           </p>
         </div>
@@ -73,18 +73,18 @@ export function CartItem({ item }: CartItemProps) {
           <div className="flex items-center space-x-2">
             <button
               onClick={() => handleQuantityChange(quantity - 1)}
-              className="flex h-8 w-8 items-center justify-center rounded-md border border-gray-300 text-gray-200 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
+              className="flex h-8 w-8 items-center justify-center rounded-lg border border-border-custom text-text-secondary hover:bg-surface disabled:cursor-not-allowed disabled:opacity-50"
               disabled={quantity <= 1}
               aria-label="Decrease quantity"
             >
               -
             </button>
-            <span className="w-12 text-center text-sm font-medium text-gray-900">
+            <span className="w-12 text-center text-sm font-medium text-foreground">
               {quantity}
             </span>
             <button
               onClick={() => handleQuantityChange(quantity + 1)}
-              className="flex h-8 w-8 items-center justify-center rounded-md border border-gray-300 text-gray-200 hover:bg-gray-50"
+              className="flex h-8 w-8 items-center justify-center rounded-lg border border-border-custom text-text-secondary hover:bg-surface"
               aria-label="Increase quantity"
             >
               +
@@ -94,7 +94,7 @@ export function CartItem({ item }: CartItemProps) {
           {/* Remove Button */}
           <button
             onClick={handleRemove}
-            className="text-sm text-red-600 hover:text-red-700"
+            className="text-sm text-brand hover:text-brand-dark"
           >
             Remove
           </button>

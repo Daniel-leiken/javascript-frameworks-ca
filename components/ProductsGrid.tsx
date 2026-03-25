@@ -19,7 +19,6 @@ export function ProductsGrid({ initialProducts }: ProductsGridProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [sortOption, setSortOption] = useState<SortOption | ''>('');
 
-  // Filter products based on search query
   const filteredProducts = useMemo(() => {
     if (!searchQuery.trim()) return initialProducts;
 
@@ -32,7 +31,6 @@ export function ProductsGrid({ initialProducts }: ProductsGridProps) {
     );
   }, [initialProducts, searchQuery]);
 
-  // Sort products based on selected option
   const sortedProducts = useMemo(() => {
     const products = [...filteredProducts];
 
@@ -64,14 +62,14 @@ export function ProductsGrid({ initialProducts }: ProductsGridProps) {
 
       {/* Results Count */}
       <div className="mb-6 flex items-center justify-between">
-        <p className="text-sm text-gray-200">
-          Showing <span className="font-semibold">{sortedProducts.length}</span> 
+        <p className="text-sm text-text-secondary">
+          Showing <span className="font-semibold">{sortedProducts.length}</span>
           {searchQuery && ' matching'} products
         </p>
         {searchQuery && (
           <button
             onClick={() => setSearchQuery('')}
-            className="text-sm text-emerald-600 hover:text-emerald-700"
+            className="text-sm text-brand hover:text-brand-dark"
           >
             Clear search
           </button>
@@ -87,8 +85,8 @@ export function ProductsGrid({ initialProducts }: ProductsGridProps) {
         </div>
       ) : (
         <div className="py-12 text-center">
-          <p className="text-gray-200">
-            No products found matching "{searchQuery}". Try a different search term.
+          <p className="text-text-secondary">
+            No products found matching &quot;{searchQuery}&quot;. Try a different search term.
           </p>
         </div>
       )}

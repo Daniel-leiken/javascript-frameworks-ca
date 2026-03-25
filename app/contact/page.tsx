@@ -16,10 +16,10 @@ export default function ContactPage() {
       <div className="mx-auto max-w-2xl">
         {/* Header */}
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-gray-200 sm:text-4xl">
+          <h1 className="font-serif text-3xl font-bold text-foreground sm:text-4xl">
             Contact Us
           </h1>
-          <p className="mt-4 text-lg text-gray-200">
+          <p className="mt-4 text-lg text-text-secondary">
             Have a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
           </p>
         </div>

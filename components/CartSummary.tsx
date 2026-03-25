@@ -10,32 +10,31 @@ import { useCartStore } from '@/lib/store';
 import { formatCurrency } from '@/lib/utils';
 
 export function CartSummary() {
-  const items = useCartStore((state) => state.items);
   const totalItems = useCartStore((state) => state.getTotalItems());
   const totalPrice = useCartStore((state) => state.getTotalPrice());
 
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-6 sticky top-24">
-      <h2 className="text-lg font-semibold text-gray-900">Order Summary</h2>
+    <div className="rounded-2xl border border-border-custom bg-white p-6 sticky top-24">
+      <h2 className="text-lg font-semibold text-foreground">Order Summary</h2>
 
       <div className="mt-6 space-y-4">
         {/* Items Count */}
         <div className="flex justify-between text-sm">
-          <span className="text-gray-700">
+          <span className="text-text-secondary">
             Items ({totalItems})
           </span>
-          <span className="font-medium text-gray-900">
+          <span className="font-medium text-foreground">
             {formatCurrency(totalPrice)}
           </span>
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-200" />
+        <div className="border-t border-border-custom" />
 
         {/* Total */}
         <div className="flex justify-between">
-          <span className="text-lg font-semibold text-gray-900">Total</span>
-          <span className="text-lg font-bold text-gray-900">
+          <span className="text-lg font-semibold text-foreground">Total</span>
+          <span className="text-lg font-bold text-foreground">
             {formatCurrency(totalPrice)}
           </span>
         </div>
@@ -44,7 +43,7 @@ export function CartSummary() {
       {/* Checkout Button */}
       <Link
         href="/checkout/success"
-        className="mt-6 block w-full rounded-lg bg-emerald-600 px-6 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+        className="mt-6 block w-full rounded-xl bg-brand px-6 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-brand-dark focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
       >
         Proceed to Checkout
       </Link>
@@ -52,13 +51,13 @@ export function CartSummary() {
       {/* Continue Shopping */}
       <Link
         href="/"
-        className="mt-3 block w-full rounded-lg border border-gray-300 bg-white px-6 py-3 text-center text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50"
+        className="mt-3 block w-full rounded-xl border border-border-custom bg-white px-6 py-3 text-center text-sm font-medium text-text-secondary transition-colors hover:bg-surface"
       >
         Continue Shopping
       </Link>
 
       {/* Info Message */}
-      <p className="mt-4 text-xs text-gray-500 text-center">
+      <p className="mt-4 text-xs text-text-secondary text-center">
         Taxes and shipping calculated at checkout
       </p>
     </div>

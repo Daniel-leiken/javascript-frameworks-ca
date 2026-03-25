@@ -15,7 +15,6 @@ export function CheckoutSuccess() {
   const totalItems = useCartStore((state) => state.getTotalItems());
 
   useEffect(() => {
-    // Only clear cart and show toast if there were items
     if (totalItems > 0) {
       clearCart();
       showToast.checkoutSuccess();
@@ -25,9 +24,9 @@ export function CheckoutSuccess() {
   return (
     <div className="mx-auto max-w-2xl text-center">
       {/* Success Icon */}
-      <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-green-100">
+      <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-brand-light">
         <svg
-          className="h-12 w-12 text-green-600"
+          className="h-12 w-12 text-brand-dark"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -42,20 +41,20 @@ export function CheckoutSuccess() {
       </div>
 
       {/* Success Message */}
-      <h1 className="mt-6 text-3xl font-bold text-gray-100 sm:text-4xl">
+      <h1 className="mt-6 font-serif text-3xl font-bold text-foreground sm:text-4xl">
         Order Placed Successfully!
       </h1>
-      <p className="mt-4 text-lg text-gray-200">
+      <p className="mt-4 text-lg text-text-secondary">
         Thank you for your purchase. Your order has been received and is being processed.
       </p>
 
       {/* Order Details */}
-      <div className="mt-8 rounded-lg bg-white p-6">
-        <h2 className="text-lg font-semibold text-gray-900">What's Next?</h2>
-        <div className="mt-4 space-y-3 text-left text-sm text-gray-700">
+      <div className="mt-8 rounded-2xl bg-white border border-border-custom p-6">
+        <h2 className="text-lg font-semibold text-foreground">What&apos;s Next?</h2>
+        <div className="mt-4 space-y-3 text-left text-sm text-text-secondary">
           <div className="flex items-start">
             <svg
-              className="mr-2 mt-0.5 h-5 w-5 flex-shrink-0 text-green-600"
+              className="mr-2 mt-0.5 h-5 w-5 flex-shrink-0 text-brand"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -71,7 +70,7 @@ export function CheckoutSuccess() {
           </div>
           <div className="flex items-start">
             <svg
-              className="mr-2 mt-0.5 h-5 w-5 flex-shrink-0 text-green-600"
+              className="mr-2 mt-0.5 h-5 w-5 flex-shrink-0 text-brand"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -87,7 +86,7 @@ export function CheckoutSuccess() {
           </div>
           <div className="flex items-start">
             <svg
-              className="mr-2 mt-0.5 h-5 w-5 flex-shrink-0 text-green-600"
+              className="mr-2 mt-0.5 h-5 w-5 flex-shrink-0 text-brand"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -108,22 +107,22 @@ export function CheckoutSuccess() {
       <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
         <Link
           href="/"
-          className="inline-flex items-center justify-center rounded-lg bg-emerald-600 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-emerald-700"
+          className="inline-flex items-center justify-center rounded-xl bg-brand px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
         >
           Continue Shopping
         </Link>
         <Link
           href="/"
-          className="inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-8 py-3 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-50"
+          className="inline-flex items-center justify-center rounded-xl border border-border-custom bg-white px-8 py-3 text-sm font-semibold text-text-secondary transition-colors hover:bg-surface"
         >
           Back to Home
         </Link>
       </div>
 
       {/* Additional Info */}
-      <p className="mt-8 text-sm text-gray-300">
+      <p className="mt-8 text-sm text-text-secondary">
         Need help? Contact our support team at{' '}
-        <Link href="/contact" className="text-emerald-400 hover:text-emerald-300">
+        <Link href="/contact" className="text-brand hover:text-brand-dark">
           support
         </Link>
       </p>

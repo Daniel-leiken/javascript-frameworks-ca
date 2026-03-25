@@ -1,56 +1,42 @@
 /**
  * Footer Component
+ * Minimal, centered footer
  */
+
+import Link from 'next/link';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-emerald-700 bg-emerald-600">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {/* About */}
-          <div>
-            <h3 className="text-lg font-semibold text-white">ShopHub</h3>
-            <p className="mt-2 text-sm text-emerald-100">
-              Your one-stop shop for quality products at great prices.
-            </p>
-          </div>
+    <footer className="border-t border-border-custom bg-surface">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="text-center">
+          {/* Brand */}
+          <Link href="/" className="font-serif text-xl font-bold text-foreground tracking-wide">
+            ShopHub
+          </Link>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold text-white">Quick Links</h3>
-            <ul className="mt-2 space-y-2 text-sm">
-              <li>
-                <a href="/" className="text-emerald-100 hover:text-white">
-                  Products
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="text-emerald-100 hover:text-white">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href="/cart" className="text-emerald-100 hover:text-white">
-                  Shopping Cart
-                </a>
-              </li>
-            </ul>
-          </div>
+          {/* Navigation */}
+          <nav className="mt-6 flex items-center justify-center gap-6 text-sm">
+            <Link href="/" className="text-text-secondary transition-colors hover:text-foreground">
+              Products
+            </Link>
+            <span className="text-border-custom">|</span>
+            <Link href="/contact" className="text-text-secondary transition-colors hover:text-foreground">
+              Contact
+            </Link>
+            <span className="text-border-custom">|</span>
+            <Link href="/cart" className="text-text-secondary transition-colors hover:text-foreground">
+              Cart
+            </Link>
+          </nav>
 
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold text-white">Contact</h3>
-            <p className="mt-2 text-sm text-emerald-100">
-              Have questions? Get in touch with us through our contact page.
-            </p>
+          {/* Copyright */}
+          <div className="mt-8 text-xs text-text-secondary">
+            <p>&copy; {currentYear} ShopHub. All rights reserved.</p>
+            <p className="mt-1">JavaScript Frameworks Course Assignment — Noroff</p>
           </div>
-        </div>
-
-        <div className="mt-8 border-t border-emerald-700 pt-8 text-center text-sm text-emerald-100">
-          <p>&copy; {currentYear} ShopHub. All rights reserved.</p>
-          <p className="mt-1">JavaScript Frameworks Course Assignment - Noroff</p>
         </div>
       </div>
     </footer>
