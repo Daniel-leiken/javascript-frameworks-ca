@@ -4,6 +4,7 @@
  */
 
 import Link from 'next/link';
+import { Logo } from './icons/Logo';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,8 +14,8 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="text-center">
           {/* Brand */}
-          <Link href="/" className="font-serif text-xl font-bold text-foreground tracking-wide">
-            ShopHub
+          <Link href="/" className="inline-flex justify-center">
+            <Logo size="sm" />
           </Link>
 
           {/* Navigation */}

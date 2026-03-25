@@ -8,6 +8,7 @@
 import Link from 'next/link';
 import { useCartStore } from '@/lib/store';
 import { ShoppingCart } from './icons/ShoppingCart';
+import { Logo } from './icons/Logo';
 
 export function Header() {
   const totalItems = useCartStore((state) => state.getTotalItems());
@@ -18,9 +19,7 @@ export function Header() {
         <div className="flex h-16 sm:h-18 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="font-serif text-xl sm:text-2xl font-bold text-foreground tracking-wide">
-              ShopHub
-            </span>
+            <Logo size="md" />
           </Link>
 
           {/* Navigation + Cart — always visible, even on mobile */}
