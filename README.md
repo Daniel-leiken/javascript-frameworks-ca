@@ -6,6 +6,10 @@ An online shop built with Next.js, TypeScript and Tailwind CSS for the Noroff Ja
 
 ![ShopHub product listing page](docs/screenshot.webp)
 
+## Description
+
+ShopHub is an e-commerce storefront where visitors can browse products, search and sort them, read reviews, add items to a cart and go through a checkout flow. The product pages are rendered by Next.js, and the cart is kept in the browser so it survives page reloads.
+
 ## Features
 
 - Product listing with images, prices, discounts and ratings
@@ -28,12 +32,28 @@ An online shop built with Next.js, TypeScript and Tailwind CSS for the Noroff Ja
 
 ## Getting started
 
+### Installing
+
 Requires Node.js 20.9 or newer.
 
+1. Clone the repo:
+
+   ```bash
+   git clone https://github.com/Daniel-leiken/javascript-frameworks-ca.git
+   cd javascript-frameworks-ca
+   ```
+
+2. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+### Running
+
+Start the development server:
+
 ```bash
-git clone https://github.com/Daniel-leiken/javascript-frameworks-ca.git
-cd javascript-frameworks-ca
-npm install
 npm run dev
 ```
 
@@ -68,6 +88,10 @@ docs/         README screenshot
 ## AI usage
 
 GitHub Copilot was used as an assistant during the development of this project, including generating example approaches, helping structure parts of the implementation, and supporting layout and UI consistency decisions.
+
+## Contributing
+
+This is a school project, so I'm not looking for code contributions. If you find a bug or have a suggestion, feel free to [open an issue](https://github.com/Daniel-leiken/javascript-frameworks-ca/issues). Pull requests are welcome too: fork the repo, create a branch for your change and open a pull request so the change can be reviewed.
 
 ## Contact
 
