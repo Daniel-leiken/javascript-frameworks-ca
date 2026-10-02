@@ -32,14 +32,19 @@ export function SearchBar({ query, onQueryChange, onSearch }: SearchBarProps) {
   return (
     <div className="relative">
       <div className="relative">
+        <label htmlFor="product-search" className="sr-only">
+          Search products
+        </label>
         <input
-          type="text"
+          id="product-search"
+          type="search"
           value={query}
           onChange={(e) => onQueryChange(e.target.value)}
           placeholder="Search products..."
           className="w-full rounded-xl border border-border-custom py-3 pl-10 pr-10 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
         />
         <svg
+          aria-hidden="true"
           className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-text-secondary"
           fill="none"
           stroke="currentColor"
@@ -54,11 +59,12 @@ export function SearchBar({ query, onQueryChange, onSearch }: SearchBarProps) {
         </svg>
         {query && (
           <button
+            type="button"
             onClick={handleClear}
             className="absolute right-3 top-1/2 -translate-y-1/2 text-text-secondary hover:text-foreground"
             aria-label="Clear search"
           >
-            <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"

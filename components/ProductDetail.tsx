@@ -31,12 +31,14 @@ export function ProductDetail({ product }: ProductDetailProps) {
   return (
     <div className="mx-auto max-w-7xl">
       {/* Breadcrumb */}
-      <nav className="mb-6 sm:mb-8 flex items-center space-x-2 text-xs sm:text-sm text-text-secondary overflow-x-auto">
+      <nav aria-label="Breadcrumb" className="mb-6 sm:mb-8 flex items-center space-x-2 text-xs sm:text-sm text-text-secondary overflow-x-auto">
         <Link href="/" className="hover:text-brand-dark whitespace-nowrap">
           Products
         </Link>
-        <span>/</span>
-        <span className="text-foreground truncate">{product.title}</span>
+        <span aria-hidden="true">/</span>
+        <span className="text-foreground truncate" aria-current="page">
+          {product.title}
+        </span>
       </nav>
 
       <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
@@ -76,6 +78,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
                         : 'fill-gray-300'
                     }`}
                     viewBox="0 0 20 20"
+                    aria-hidden="true"
                   >
                     <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                   </svg>
@@ -171,10 +174,12 @@ export function ProductDetail({ product }: ProductDetailProps) {
                             i < review.rating ? 'fill-current' : 'fill-gray-300'
                           }`}
                           viewBox="0 0 20 20"
+                          aria-hidden="true"
                         >
                           <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                         </svg>
                       ))}
+                      <span className="sr-only">Rated {review.rating} out of 5</span>
                     </div>
                   </div>
                 </div>

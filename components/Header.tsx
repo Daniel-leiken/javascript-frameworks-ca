@@ -40,12 +40,20 @@ export function Header() {
             {/* Cart */}
             <Link
               href="/cart"
+              aria-label={
+                totalItems > 0
+                  ? `Cart, ${totalItems} ${totalItems === 1 ? 'item' : 'items'}`
+                  : 'Cart, empty'
+              }
               className="relative flex items-center gap-2 rounded-full bg-brand px-3 sm:px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-dark"
             >
               <ShoppingCart className="h-4 w-4 sm:h-5 sm:w-5" />
               <span className="hidden sm:inline">Cart</span>
               {totalItems > 0 && (
-                <span className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-foreground text-[10px] font-bold text-background">
+                <span
+                  aria-hidden="true"
+                  className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-foreground text-[10px] font-bold text-background"
+                >
                   {totalItems}
                 </span>
               )}
