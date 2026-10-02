@@ -57,7 +57,7 @@ export function ContactForm() {
         message: '',
       });
       setErrors({});
-    } catch (error) {
+    } catch {
       showToast.error('Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);

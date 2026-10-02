@@ -10,7 +10,7 @@ export default function NotFound() {
       <div className="text-center">
         <h1 className="font-serif text-4xl font-bold text-foreground">Product Not Found</h1>
         <p className="mt-4 text-lg text-text-secondary">
-          The product you're looking for doesn't exist or has been removed.
+          The product you&apos;re looking for doesn&apos;t exist or has been removed.
         </p>
         <Link
           href="/"

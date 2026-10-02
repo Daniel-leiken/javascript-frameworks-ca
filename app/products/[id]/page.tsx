@@ -45,18 +45,19 @@ export async function generateStaticParams() {
 
 export default async function ProductPage({ params }: Props) {
   const { id } = await params;
-  
+
+  let product;
   try {
-    const product = await fetchProductById(id);
-    
-    return (
-      <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        <Suspense fallback={<LoadingPage />}>
-          <ProductDetail product={product} />
-        </Suspense>
-      </div>
-    );
-  } catch (error) {
+    product = await fetchProductById(id);
+  } catch {
     notFound();
   }
+
+  return (
+    <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
+      <Suspense fallback={<LoadingPage />}>
+        <ProductDetail product={product} />
+      </Suspense>
+    </div>
+  );
 }

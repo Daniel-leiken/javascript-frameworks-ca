@@ -20,7 +20,7 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="mt-4 text-lg text-text-secondary">
-            Have a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            Have a question? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
           </p>
         </div>
 
