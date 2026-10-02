@@ -1,108 +1,77 @@
-# E-Commerce Store - JavaScript Frameworks CA
+# ShopHub - JavaScript Frameworks CA
 
-A fully functional online shop built with **Next.js**, **TypeScript**, and **Tailwind CSS**. This project demonstrates modern web development practices including API integration, state management, responsive design, and comprehensive testing.
+An online shop built with Next.js, TypeScript and Tailwind CSS for the Noroff JavaScript Frameworks course assignment. Products come from the Noroff Online Shop API.
 
-## 🚀 Features
+**Live demo:** https://javascript-frameworks-ca-daniel.netlify.app
 
-- **Product Catalog**: Browse products with images, prices, discounts, and ratings
-- **Product Details**: View detailed product information, reviews, and tags
-- **Shopping Cart**: Add/remove items, adjust quantities, and view total costs
-- **Search & Sort**: Dynamic search functionality with multiple sorting options
-- **Checkout Flow**: Complete checkout process with success confirmation
-- **Contact Form**: Validated contact form with TypeScript-based validation
-- **Toast Notifications**: Real-time feedback for user interactions
-- **Responsive Design**: Fully responsive layout for all device sizes
-- **TypeScript**: Strict type checking throughout the application
-- **Testing**: Comprehensive tests using React Testing Library
+![ShopHub product listing page](docs/screenshot.webp)
 
-## 🛠️ Tech Stack
+## Features
 
-- **Framework**: Next.js 15+ (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **State Management**: Zustand
-- **Toast Notifications**: React Hot Toast
-- **API**: Noroff Online Shop API
-- **Testing**: React Testing Library & Jest
+- Product listing with images, prices, discounts and ratings
+- Search (debounced) and sorting by name, price and rating
+- Product detail page with description, tags and reviews
+- Shopping cart stored with Zustand: add and remove items, change quantities, see totals
+- Checkout success page that clears the cart
+- Contact form with validation (name, subject, email, message)
+- Toast notifications for user actions
+- Responsive layout for mobile, tablet and desktop
 
-## 📋 Prerequisites
+## Built with
 
-- Node.js 18+ 
-- npm or yarn
+- [Next.js 16](https://nextjs.org/) (App Router) and React 19
+- TypeScript
+- Tailwind CSS v4
+- Zustand for cart state
+- React Hot Toast
+- [Noroff Online Shop API](https://docs.noroff.dev/docs/v2/basic/online-shop)
 
-## 🏃‍♂️ Getting Started
+## Getting started
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd javascript-frameworks-ca
-   ```
+Requires Node.js 20.9 or newer.
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Run the development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
-
-## 📁 Project Structure
-
-```
-├── app/                    # Next.js app directory
-│   ├── products/          # Product pages
-│   ├── cart/              # Shopping cart page
-│   ├── checkout/          # Checkout success page
-│   ├── contact/           # Contact form page
-│   └── layout.tsx         # Root layout
-├── components/            # Reusable React components
-├── lib/                   # Utility functions and helpers
-│   ├── api.ts            # API integration
-│   ├── store.ts          # State management
-│   └── types.ts          # TypeScript interfaces
-└── public/               # Static assets
-```
-
-## 🔗 API Documentation
-
-This project uses the Noroff Online Shop API:
-- Documentation: https://docs.noroff.dev/docs/v2/basic/online-shop
-- Base URL: `https://v2.api.noroff.dev/online-shop`
-
-## 🧪 Testing
-
-Run tests with:
 ```bash
-npm test
+git clone https://github.com/Daniel-leiken/javascript-frameworks-ca.git
+cd javascript-frameworks-ca
+npm install
+npm run dev
 ```
 
-## 📦 Build
+Then open http://localhost:3000.
 
-Create a production build:
-```bash
-npm run build
+### Scripts
+
+| Command         | Description                  |
+| --------------- | ---------------------------- |
+| `npm run dev`   | Start the development server |
+| `npm run build` | Create a production build    |
+| `npm run start` | Serve the production build   |
+| `npm run lint`  | Run ESLint                   |
+
+## Project structure
+
+```
+app/          Routes: home, products/[id], cart, checkout/success, contact
+components/   UI components (product grid, search, cart, forms, header, footer)
+lib/          API calls, Zustand store, types and helper functions
+docs/         README screenshot
 ```
 
-## 🚀 Deployment
+## Improvements after submission
 
-This project can be deployed to:
-- **Vercel** (recommended for Next.js)
-- **Netlify**
-- Any platform supporting Next.js
+- Fixed the "Clear search" button: it reset the results but left the text in the search field. The search input is now controlled by the product grid, and the debounce actually works (it uses `setTimeout` with cleanup instead of creating a new debounced function on every render).
+- Accessibility: label and `type="search"` on the search field, an `aria-label` with the item count on the cart link (the icon-only link on mobile had no text), `aria-label="Breadcrumb"` on the product breadcrumb, decorative icons hidden from screen readers, and a readable colour for the "No products found" text.
+- Fixed all ESLint errors so `npm run lint` passes (JSX moved out of try/catch, unused variables removed, apostrophes escaped).
+- Removed unused starter SVGs from `public/`.
+- Rewrote this README: removed claims about tests that do not exist, corrected the Next.js version, and added a screenshot and the live link.
 
-## 🤖 AI Usage
+## AI usage
 
 GitHub Copilot was used as an assistant during the development of this project, including generating example approaches, helping structure parts of the implementation, and supporting layout and UI consistency decisions.
 
-## 👨‍💻 Author
+## Contact
 
 Daniel Strandheim
 
-## 📄 License
-
-This project is part of the Noroff JavaScript Frameworks Course Assignment.
+- GitHub: [Daniel-leiken](https://github.com/Daniel-leiken)
+- LinkedIn: [daniel-strandheim](https://www.linkedin.com/in/daniel-strandheim)
