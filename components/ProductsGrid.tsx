@@ -16,6 +16,7 @@ interface ProductsGridProps {
 }
 
 export function ProductsGrid({ initialProducts }: ProductsGridProps) {
+  const [inputValue, setInputValue] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
   const [sortOption, setSortOption] = useState<SortOption | ''>('');
 
@@ -50,12 +51,21 @@ export function ProductsGrid({ initialProducts }: ProductsGridProps) {
     }
   }, [filteredProducts, sortOption]);
 
+  const handleClearSearch = () => {
+    setInputValue('');
+    setSearchQuery('');
+  };
+
   return (
     <div>
       {/* Search and Sort Controls */}
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex-1 sm:max-w-md">
-          <SearchBar onSearch={setSearchQuery} />
+          <SearchBar
+            query={inputValue}
+            onQueryChange={setInputValue}
+            onSearch={setSearchQuery}
+          />
         </div>
         <SortDropdown value={sortOption} onChange={setSortOption} />
       </div>
@@ -68,7 +78,7 @@ export function ProductsGrid({ initialProducts }: ProductsGridProps) {
         </p>
         {searchQuery && (
           <button
-            onClick={() => setSearchQuery('')}
+            onClick={handleClearSearch}
             className="text-sm text-brand hover:text-brand-dark"
           >
             Clear search

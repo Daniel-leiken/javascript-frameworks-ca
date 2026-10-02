@@ -5,26 +5,27 @@
 
 'use client';
 
-import { useState, useEffect } from 'react';
-import { debounce } from '@/lib/utils';
+import { useEffect } from 'react';
 
 interface SearchBarProps {
+  query: string;
+  onQueryChange: (query: string) => void;
   onSearch: (query: string) => void;
 }
 
-export function SearchBar({ onSearch }: SearchBarProps) {
-  const [query, setQuery] = useState('');
-
+export function SearchBar({ query, onQueryChange, onSearch }: SearchBarProps) {
+  // Debounce: only run the search 300ms after the user stops typing.
+  // The cleanup cancels the pending timeout when the query changes again.
   useEffect(() => {
-    const debouncedSearch = debounce((searchQuery: string) => {
-      onSearch(searchQuery);
+    const timeoutId = setTimeout(() => {
+      onSearch(query);
     }, 300);
 
-    debouncedSearch(query);
+    return () => clearTimeout(timeoutId);
   }, [query, onSearch]);
 
   const handleClear = () => {
-    setQuery('');
+    onQueryChange('');
     onSearch('');
   };
 
@@ -34,7 +35,7 @@ export function SearchBar({ onSearch }: SearchBarProps) {
         <input
           type="text"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => onQueryChange(e.target.value)}
           placeholder="Search products..."
           className="w-full rounded-xl border border-border-custom py-3 pl-10 pr-10 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
         />
